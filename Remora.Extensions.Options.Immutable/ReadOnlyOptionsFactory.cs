@@ -78,15 +78,15 @@ namespace Remora.Extensions.Options.Immutable
         public TOptions Create(string name)
         {
             TOptions options = GetCreator(name).Create();
-            foreach (var alter in _readOnlyConfigures)
+            foreach (var configure in _readOnlyConfigures)
             {
-                if (alter is IReadOnlyConfigureNamedOptions<TOptions> namedAlter)
+                if (configure is IReadOnlyConfigureNamedOptions<TOptions> namedConfigure)
                 {
-                    options = namedAlter.Configure(name, options);
+                    options = namedConfigure.Configure(name, options);
                 }
                 else if (name == MSOptions.DefaultName)
                 {
-                    options = alter.Configure(options);
+                    options = configure.Configure(options);
                 }
             }
 
