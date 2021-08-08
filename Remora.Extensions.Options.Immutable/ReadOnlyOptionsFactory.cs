@@ -26,6 +26,8 @@ using System.Linq;
 using JetBrains.Annotations;
 using Microsoft.Extensions.Options;
 
+using MSOptions = Microsoft.Extensions.Options.Options;
+
 namespace Remora.Extensions.Options.Immutable
 {
     /// <summary>
@@ -82,7 +84,7 @@ namespace Remora.Extensions.Options.Immutable
                 {
                     options = namedAlter.Configure(name, options);
                 }
-                else if (name == Microsoft.Extensions.Options.Options.DefaultName)
+                else if (name == MSOptions.DefaultName)
                 {
                     options = alter.Configure(options);
                 }
@@ -99,7 +101,7 @@ namespace Remora.Extensions.Options.Immutable
                 {
                     namedSetup.Configure(name, options);
                 }
-                else if (name == Microsoft.Extensions.Options.Options.DefaultName)
+                else if (name == MSOptions.DefaultName)
                 {
                     configure.Configure(options);
                 }
@@ -151,10 +153,11 @@ namespace Remora.Extensions.Options.Immutable
             }
 
             var constructors = typeof(TOptions).GetConstructors();
-            var hasParameterless = constructors.Any(c => c.GetParameters().Length == 0);
-            if (hasParameterless)
+
+            var parameterless = constructors.FirstOrDefault(c => c.GetParameters().Length == 0);
+            if (parameterless is not null)
             {
-                return new CreateOptions<TOptions>(name, Activator.CreateInstance<TOptions>);
+                return new CreateOptions<TOptions>(name, () => (TOptions)parameterless.Invoke(Array.Empty<object>()));
             }
 
             var allDefaults = constructors.FirstOrDefault(c => c.GetParameters().All(p => p.HasDefaultValue));
