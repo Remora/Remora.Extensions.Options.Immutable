@@ -11,6 +11,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "metadata", ".\", "{F1A57014
 	EndProjectSection
 EndProject
 
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{6E2D59EB-648D-4968-8A63-8D8E3813EC86}"
+    ProjectSection(SolutionItems) = preProject
+        Tests\Directory.Build.props = Tests\Directory.Build.props
+    EndProjectSection
+EndProject
+
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Remora.Extensions.Options.Immutable", "Remora.Extensions.Options.Immutable\Remora.Extensions.Options.Immutable.csproj", "{DC8B0400-1BDD-47B1-8F06-F5CA491C4271}"
 EndProject
 Global
