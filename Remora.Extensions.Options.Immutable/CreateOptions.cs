@@ -21,6 +21,7 @@
 //
 
 using System;
+using JetBrains.Annotations;
 
 namespace Remora.Extensions.Options.Immutable
 {
@@ -28,6 +29,7 @@ namespace Remora.Extensions.Options.Immutable
     /// Implementation of <see cref="ICreateOptions{TOptions}"/>.
     /// </summary>
     /// <typeparam name="TOptions">Options type being created.</typeparam>
+    [PublicAPI]
     public record CreateOptions<TOptions>(string? Name, Func<TOptions> Creator)
         : ICreateOptions<TOptions> where TOptions : class
     {

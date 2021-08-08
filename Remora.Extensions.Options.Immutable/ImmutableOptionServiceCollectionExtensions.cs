@@ -21,6 +21,7 @@
 //
 
 using System;
+using JetBrains.Annotations;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Options;
@@ -30,6 +31,7 @@ namespace Remora.Extensions.Options.Immutable
     /// <summary>
     /// Defines extension methods for the <see cref="IServiceCollection"/> interface.
     /// </summary>
+    [PublicAPI]
     public static class ImmutableOptionServiceCollectionExtensions
     {
         /// <summary>

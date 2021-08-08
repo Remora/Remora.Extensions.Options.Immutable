@@ -20,6 +20,8 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
 
+using JetBrains.Annotations;
+
 namespace Remora.Extensions.Options.Immutable
 {
     /// <summary>
@@ -27,6 +29,7 @@ namespace Remora.Extensions.Options.Immutable
     /// </summary>
     /// <remarks>These are run after all <see cref="IReadOnlyConfigureOptions{TOptions}"/>.</remarks>
     /// <typeparam name="TOptions">The options type being configured.</typeparam>
+    [PublicAPI]
     public interface IReadOnlyPostConfigureOptions<TOptions> where TOptions : class
     {
         /// <summary>

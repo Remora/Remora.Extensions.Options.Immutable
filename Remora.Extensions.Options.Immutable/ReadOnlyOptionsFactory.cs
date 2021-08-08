@@ -23,6 +23,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using JetBrains.Annotations;
 using Microsoft.Extensions.Options;
 
 namespace Remora.Extensions.Options.Immutable
@@ -31,6 +32,7 @@ namespace Remora.Extensions.Options.Immutable
     /// Implementation of <see cref="IOptionsFactory{TOptions}"/> that can create read-only option instances.
     /// </summary>
     /// <typeparam name="TOptions">The type of options being requested.</typeparam>
+    [PublicAPI]
     public class ReadOnlyOptionsFactory<TOptions> : IOptionsFactory<TOptions> where TOptions : class
     {
         private readonly IEnumerable<ICreateOptions<TOptions>> _creators;

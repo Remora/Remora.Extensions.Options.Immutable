@@ -21,6 +21,7 @@
 //
 
 using System;
+using JetBrains.Annotations;
 
 namespace Remora.Extensions.Options.Immutable
 {
@@ -28,6 +29,7 @@ namespace Remora.Extensions.Options.Immutable
     /// Implementation of <see cref="IReadOnlyConfigureNamedOptions{TOptions}"/> that configures a read-only options type.
     /// </summary>
     /// <typeparam name="TOptions">Options type being configured.</typeparam>
+    [PublicAPI]
     public record ReadOnlyConfigureNamedOptions<TOptions>(string? Name, Func<TOptions, TOptions> Function)
         : IReadOnlyConfigureNamedOptions<TOptions> where TOptions : class
     {

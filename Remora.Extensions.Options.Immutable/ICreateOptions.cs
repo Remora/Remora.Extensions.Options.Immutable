@@ -20,12 +20,15 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
 
+using JetBrains.Annotations;
+
 namespace Remora.Extensions.Options.Immutable
 {
     /// <summary>
     /// Represents something that creates an initial instance of the <typeparamref name="TOptions"/> type.
     /// </summary>
     /// <typeparam name="TOptions">The options type being created.</typeparam>
+    [PublicAPI]
     public interface ICreateOptions<out TOptions> where TOptions : class
     {
         /// <summary>
