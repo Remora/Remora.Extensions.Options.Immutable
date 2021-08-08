@@ -20,4 +20,19 @@
       <PackageReference Include="Microsoft.Extensions.Options" Version="5.0.0" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Compile Update="Services\IReadOnlyPostConfigureOptions.cs">
+        <DependentUpon>ReadOnlyPostConfigureOptions.cs</DependentUpon>
+      </Compile>
+      <Compile Update="Services\IReadOnlyConfigureNamedOptions.cs">
+        <DependentUpon>ReadOnlyConfigureNamedOptions.cs</DependentUpon>
+      </Compile>
+      <Compile Update="Services\IReadOnlyConfigureOptions.cs">
+        <DependentUpon>ReadOnlyConfigureNamedOptions.cs</DependentUpon>
+      </Compile>
+      <Compile Update="Services\ICreateOptions.cs">
+        <DependentUpon>CreateOptions.cs</DependentUpon>
+      </Compile>
+    </ItemGroup>
+
 </Project>
