@@ -97,9 +97,9 @@ namespace Remora.Extensions.Options.Immutable
 
             foreach (var configure in _configures)
             {
-                if (configure is IConfigureNamedOptions<TOptions> namedSetup)
+                if (configure is IConfigureNamedOptions<TOptions> namedConfigure)
                 {
-                    namedSetup.Configure(name, options);
+                    namedConfigure.Configure(name, options);
                 }
                 else if (name == MSOptions.DefaultName)
                 {
