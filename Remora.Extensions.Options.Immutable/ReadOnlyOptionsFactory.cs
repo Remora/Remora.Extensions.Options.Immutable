@@ -112,7 +112,7 @@ namespace Remora.Extensions.Options.Immutable
                 post.PostConfigure(name, options);
             }
 
-            if (_validations == null)
+            if (_validations == null || !_validations.Any())
             {
                 return options;
             }

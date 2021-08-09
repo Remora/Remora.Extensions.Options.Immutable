@@ -162,7 +162,7 @@ namespace Remora.Extensions.Options.Immutable
         public static IServiceCollection PostConfigure<TOptions>
         (
             this IServiceCollection services,
-            string name,
+            string? name,
             Func<TOptions, TOptions> configureOptions
         ) where TOptions : class
         {
@@ -188,7 +188,7 @@ namespace Remora.Extensions.Options.Immutable
         public static IServiceCollection PostConfigureAll<TOptions>
         (
             this IServiceCollection services,
-            Action<TOptions> configureOptions
+            Func<TOptions, TOptions> configureOptions
         ) where TOptions : class
             => services.PostConfigure(null, configureOptions);
     }

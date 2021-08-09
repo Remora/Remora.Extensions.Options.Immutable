@@ -12,12 +12,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "metadata", ".\", "{F1A57014
 EndProject
 
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{6E2D59EB-648D-4968-8A63-8D8E3813EC86}"
-    ProjectSection(SolutionItems) = preProject
-        Tests\Directory.Build.props = Tests\Directory.Build.props
-    EndProjectSection
+				ProjectSection(SolutionItems) = preProject
+								Tests\Directory.Build.props = Tests\Directory.Build.props
+				EndProjectSection
 EndProject
 
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Remora.Extensions.Options.Immutable", "Remora.Extensions.Options.Immutable\Remora.Extensions.Options.Immutable.csproj", "{DC8B0400-1BDD-47B1-8F06-F5CA491C4271}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Remora.Extensions.Options.Immutable.Tests", "Tests\Remora.Extensions.Options.Immutable.Tests\Remora.Extensions.Options.Immutable.Tests.csproj", "{F5A2650C-4996-490A-A60B-89E3B95DFC65}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,5 +31,12 @@ Global
 		{DC8B0400-1BDD-47B1-8F06-F5CA491C4271}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DC8B0400-1BDD-47B1-8F06-F5CA491C4271}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DC8B0400-1BDD-47B1-8F06-F5CA491C4271}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5A2650C-4996-490A-A60B-89E3B95DFC65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5A2650C-4996-490A-A60B-89E3B95DFC65}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5A2650C-4996-490A-A60B-89E3B95DFC65}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5A2650C-4996-490A-A60B-89E3B95DFC65}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F5A2650C-4996-490A-A60B-89E3B95DFC65} = {6E2D59EB-648D-4968-8A63-8D8E3813EC86}
 	EndGlobalSection
 EndGlobal
