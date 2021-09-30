@@ -38,7 +38,6 @@
         <PackageOutputPath>$(SolutionDir)/nuget</PackageOutputPath>
         <PackageProjectUrl>https://github.com/Nihlus/Remora.Discord</PackageProjectUrl>
         <PackageTags>discord;bot;api;</PackageTags>
-        <PackageIconUrl>https://cdn.gullberg.tk/remora/icon/shark.png</PackageIconUrl>
         <PackageIcon>shark.png</PackageIcon>
 
         <BaseDescription>
