@@ -37,7 +37,7 @@
         <RepositoryBranch>master</RepositoryBranch>
         <PackageOutputPath>$(SolutionDir)/nuget</PackageOutputPath>
         <PackageProjectUrl>https://github.com/Nihlus/Remora.Extensions.Options.Immutable</PackageProjectUrl>
-        <PackageTags>discord;bot;api;</PackageTags>
+        <PackageTags>extensions;options;microsoft;</PackageTags>
         <PackageIcon>shark.png</PackageIcon>
 
         <BaseDescription>
