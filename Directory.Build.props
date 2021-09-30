@@ -33,10 +33,10 @@
         <EmbedAllSources>true</EmbedAllSources>
         <SymbolPackageFormat>snupkg</SymbolPackageFormat>
 
-        <RepositoryUrl>https://github.com/Nihlus/Remora.Discord</RepositoryUrl>
+        <RepositoryUrl>https://github.com/Nihlus/Remora.Extensions.Options.Immutable</RepositoryUrl>
         <RepositoryBranch>master</RepositoryBranch>
         <PackageOutputPath>$(SolutionDir)/nuget</PackageOutputPath>
-        <PackageProjectUrl>https://github.com/Nihlus/Remora.Discord</PackageProjectUrl>
+        <PackageProjectUrl>https://github.com/Nihlus/Remora.Extensions.Options.Immutable</PackageProjectUrl>
         <PackageTags>discord;bot;api;</PackageTags>
         <PackageIcon>shark.png</PackageIcon>
 
@@ -125,6 +125,9 @@
 
     <!-- NuGet Icon -->
     <ItemGroup>
-        <None Include="$(SolutionDir)/images/shark.png" Pack="true" PackagePath="/" />
+        <None Include="$(MSBuildThisFileDirectory)images/shark.png" Pack="true" PackagePath="/">
+            <Link>shark.png</Link>
+            <InProject>false</InProject>
+        </None>
     </ItemGroup>
 </Project>
