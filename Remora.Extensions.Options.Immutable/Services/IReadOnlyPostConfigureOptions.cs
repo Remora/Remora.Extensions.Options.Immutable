@@ -22,22 +22,21 @@
 
 using JetBrains.Annotations;
 
-namespace Remora.Extensions.Options.Immutable
+namespace Remora.Extensions.Options.Immutable;
+
+/// <summary>
+/// Represents something that configures the <typeparamref name="TOptions"/> type, returning the altered instance.
+/// </summary>
+/// <remarks>These are run after all <see cref="IReadOnlyConfigureOptions{TOptions}"/>.</remarks>
+/// <typeparam name="TOptions">The options type being configured.</typeparam>
+[PublicAPI]
+public interface IReadOnlyPostConfigureOptions<TOptions> where TOptions : class
 {
     /// <summary>
-    /// Represents something that configures the <typeparamref name="TOptions"/> type, returning the altered instance.
+    /// Invoked to configure a <typeparamref name="TOptions"/> instance.
     /// </summary>
-    /// <remarks>These are run after all <see cref="IReadOnlyConfigureOptions{TOptions}"/>.</remarks>
-    /// <typeparam name="TOptions">The options type being configured.</typeparam>
-    [PublicAPI]
-    public interface IReadOnlyPostConfigureOptions<TOptions> where TOptions : class
-    {
-        /// <summary>
-        /// Invoked to configure a <typeparamref name="TOptions"/> instance.
-        /// </summary>
-        /// <param name="name">The name of the options instance being configured.</param>
-        /// <param name="options">The options instance to configure.</param>
-        /// <returns>The options, with the alterations.</returns>
-        TOptions PostConfigure(string name, TOptions options);
-    }
+    /// <param name="name">The name of the options instance being configured.</param>
+    /// <param name="options">The options instance to configure.</param>
+    /// <returns>The options, with the alterations.</returns>
+    TOptions PostConfigure(string name, TOptions options);
 }

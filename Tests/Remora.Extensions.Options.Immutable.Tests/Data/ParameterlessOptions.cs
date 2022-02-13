@@ -20,21 +20,20 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
 
-namespace Remora.Extensions.Options.Immutable.Tests.Data
+namespace Remora.Extensions.Options.Immutable.Tests.Data;
+
+/// <summary>
+/// An option record with a parameterless constructor.
+/// </summary>
+public record ParameterlessOptions
 {
     /// <summary>
-    /// An option record with a parameterless constructor.
+    /// Gets a value.
     /// </summary>
-    public record ParameterlessOptions()
-    {
-        /// <summary>
-        /// Gets a value.
-        /// </summary>
-        public string? Value { get; init; }
+    public string? Value { get; init; }
 
-        /// <summary>
-        /// Gets a value indicating whether a flag is set.
-        /// </summary>
-        public bool Flag { get; init; }
-    }
+    /// <summary>
+    /// Gets a value indicating whether a flag is set.
+    /// </summary>
+    public bool Flag { get; init; }
 }

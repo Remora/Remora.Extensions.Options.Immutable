@@ -20,12 +20,11 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
 
-namespace Remora.Extensions.Options.Immutable.Tests.Data
-{
-    /// <summary>
-    /// An option record requiring explicit initialization.
-    /// </summary>
-    /// <param name="Value">A value.</param>
-    /// <param name="Flag">A flag.</param>
-    public record ExplicitOptions(string Value, bool Flag);
-}
+namespace Remora.Extensions.Options.Immutable.Tests.Data;
+
+/// <summary>
+/// An option record requiring explicit initialization.
+/// </summary>
+/// <param name="Value">A value.</param>
+/// <param name="Flag">A flag.</param>
+public record ExplicitOptions(string Value, bool Flag);

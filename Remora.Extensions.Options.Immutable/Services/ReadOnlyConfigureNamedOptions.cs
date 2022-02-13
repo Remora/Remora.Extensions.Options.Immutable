@@ -23,30 +23,29 @@
 using System;
 using JetBrains.Annotations;
 
-namespace Remora.Extensions.Options.Immutable
+namespace Remora.Extensions.Options.Immutable;
+
+/// <summary>
+/// Implementation of <see cref="IReadOnlyConfigureNamedOptions{TOptions}"/> that configures a read-only options type.
+/// </summary>
+/// <typeparam name="TOptions">Options type being configured.</typeparam>
+[PublicAPI]
+public record ReadOnlyConfigureNamedOptions<TOptions>(string? Name, Func<TOptions, TOptions> Function)
+    : IReadOnlyConfigureNamedOptions<TOptions> where TOptions : class
 {
-    /// <summary>
-    /// Implementation of <see cref="IReadOnlyConfigureNamedOptions{TOptions}"/> that configures a read-only options type.
-    /// </summary>
-    /// <typeparam name="TOptions">Options type being configured.</typeparam>
-    [PublicAPI]
-    public record ReadOnlyConfigureNamedOptions<TOptions>(string? Name, Func<TOptions, TOptions> Function)
-        : IReadOnlyConfigureNamedOptions<TOptions> where TOptions : class
+    /// <inheritdoc />
+    public TOptions Configure(TOptions options)
+        => Configure(Microsoft.Extensions.Options.Options.DefaultName, options);
+
+    /// <inheritdoc />
+    public TOptions Configure(string name, TOptions options)
     {
-        /// <inheritdoc />
-        public TOptions Configure(TOptions options)
-            => Configure(Microsoft.Extensions.Options.Options.DefaultName, options);
-
-        /// <inheritdoc />
-        public TOptions Configure(string name, TOptions options)
+        // Null name is used to configure all named options.
+        if (this.Name is null || name == this.Name)
         {
-            // Null name is used to configure all named options.
-            if (this.Name is null || name == this.Name)
-            {
-                return this.Function.Invoke(options);
-            }
-
-            return options;
+            return this.Function.Invoke(options);
         }
+
+        return options;
     }
 }

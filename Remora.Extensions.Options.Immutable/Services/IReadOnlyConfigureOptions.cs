@@ -22,21 +22,20 @@
 
 using JetBrains.Annotations;
 
-namespace Remora.Extensions.Options.Immutable
+namespace Remora.Extensions.Options.Immutable;
+
+/// <summary>
+/// Represents something that configures the <typeparamref name="TOptions"/> type, returning the altered instance.
+/// </summary>
+/// <remarks>These are run before all <see cref="IReadOnlyPostConfigureOptions{TOptions}"/>.</remarks>
+/// <typeparam name="TOptions">The options type being configured.</typeparam>
+[PublicAPI]
+public interface IReadOnlyConfigureOptions<TOptions> where TOptions : class
 {
     /// <summary>
-    /// Represents something that configures the <typeparamref name="TOptions"/> type, returning the altered instance.
+    /// Invoked to configure a <typeparamref name="TOptions"/> instance.
     /// </summary>
-    /// <remarks>These are run before all <see cref="IReadOnlyPostConfigureOptions{TOptions}"/>.</remarks>
-    /// <typeparam name="TOptions">The options type being configured.</typeparam>
-    [PublicAPI]
-    public interface IReadOnlyConfigureOptions<TOptions> where TOptions : class
-    {
-        /// <summary>
-        /// Invoked to configure a <typeparamref name="TOptions"/> instance.
-        /// </summary>
-        /// <param name="options">The options instance to configure.</param>
-        /// <returns>The options, with the alterations.</returns>
-        TOptions Configure(TOptions options);
-    }
+    /// <param name="options">The options instance to configure.</param>
+    /// <returns>The options, with the alterations.</returns>
+    TOptions Configure(TOptions options);
 }

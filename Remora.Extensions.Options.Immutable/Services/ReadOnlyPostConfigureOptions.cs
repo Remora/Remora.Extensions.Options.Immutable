@@ -23,26 +23,25 @@
 using System;
 using JetBrains.Annotations;
 
-namespace Remora.Extensions.Options.Immutable
-{
-    /// <summary>
-    /// Implementation of <see cref="IReadOnlyPostConfigureOptions{TOptions}"/> that configures a read-only options type.
-    /// </summary>
-    /// <typeparam name="TOptions">Options type being configured.</typeparam>
-    [PublicAPI]
-    public record ReadOnlyPostConfigureOptions<TOptions>(string? Name, Func<TOptions, TOptions> Function)
-        : IReadOnlyPostConfigureOptions<TOptions> where TOptions : class
-    {
-        /// <inheritdoc />
-        public TOptions PostConfigure(string name, TOptions options)
-        {
-            // Null name is used to configure all named options.
-            if (this.Name is null || name == this.Name)
-            {
-                return this.Function.Invoke(options);
-            }
+namespace Remora.Extensions.Options.Immutable;
 
-            return options;
+/// <summary>
+/// Implementation of <see cref="IReadOnlyPostConfigureOptions{TOptions}"/> that configures a read-only options type.
+/// </summary>
+/// <typeparam name="TOptions">Options type being configured.</typeparam>
+[PublicAPI]
+public record ReadOnlyPostConfigureOptions<TOptions>(string? Name, Func<TOptions, TOptions> Function)
+    : IReadOnlyPostConfigureOptions<TOptions> where TOptions : class
+{
+    /// <inheritdoc />
+    public TOptions PostConfigure(string name, TOptions options)
+    {
+        // Null name is used to configure all named options.
+        if (this.Name is null || name == this.Name)
+        {
+            return this.Function.Invoke(options);
         }
+
+        return options;
     }
 }

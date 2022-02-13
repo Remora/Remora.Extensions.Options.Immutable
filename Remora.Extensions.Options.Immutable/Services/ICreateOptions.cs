@@ -22,24 +22,23 @@
 
 using JetBrains.Annotations;
 
-namespace Remora.Extensions.Options.Immutable
+namespace Remora.Extensions.Options.Immutable;
+
+/// <summary>
+/// Represents something that creates an initial instance of the <typeparamref name="TOptions"/> type.
+/// </summary>
+/// <typeparam name="TOptions">The options type being created.</typeparam>
+[PublicAPI]
+public interface ICreateOptions<out TOptions> where TOptions : class
 {
     /// <summary>
-    /// Represents something that creates an initial instance of the <typeparamref name="TOptions"/> type.
+    /// Gets the name of the options instance.
     /// </summary>
-    /// <typeparam name="TOptions">The options type being created.</typeparam>
-    [PublicAPI]
-    public interface ICreateOptions<out TOptions> where TOptions : class
-    {
-        /// <summary>
-        /// Gets the name of the options instance.
-        /// </summary>
-        string? Name { get; }
+    string? Name { get; }
 
-        /// <summary>
-        /// Invoked to create a <typeparamref name="TOptions"/> instance.
-        /// </summary>
-        /// <returns>The created instance.</returns>
-        TOptions Create();
-    }
+    /// <summary>
+    /// Invoked to create a <typeparamref name="TOptions"/> instance.
+    /// </summary>
+    /// <returns>The created instance.</returns>
+    TOptions Create();
 }
