@@ -33,10 +33,10 @@
         <EmbedAllSources>true</EmbedAllSources>
         <SymbolPackageFormat>snupkg</SymbolPackageFormat>
 
-        <RepositoryUrl>https://github.com/Nihlus/Remora.Extensions.Options.Immutable</RepositoryUrl>
-        <RepositoryBranch>master</RepositoryBranch>
+        <RepositoryUrl>https://github.com/Remora/Remora.Extensions.Options.Immutable</RepositoryUrl>
+        <RepositoryBranch>main</RepositoryBranch>
         <PackageOutputPath>$(SolutionDir)/nuget</PackageOutputPath>
-        <PackageProjectUrl>https://github.com/Nihlus/Remora.Extensions.Options.Immutable</PackageProjectUrl>
+        <PackageProjectUrl>https://github.com/Remora/Remora.Extensions.Options.Immutable</PackageProjectUrl>
         <PackageTags>extensions;options;microsoft;</PackageTags>
         <PackageIcon>shark.png</PackageIcon>
         <PackageReadmeFile>README.md</PackageReadmeFile>
