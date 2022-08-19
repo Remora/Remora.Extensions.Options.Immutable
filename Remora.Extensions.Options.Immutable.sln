@@ -16,6 +16,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Remora.Extensions.Options.I
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Remora.Extensions.Options.Immutable.Tests", "Tests\Remora.Extensions.Options.Immutable.Tests\Remora.Extensions.Options.Immutable.Tests.csproj", "{F5A2650C-4996-490A-A60B-89E3B95DFC65}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{6D2DEBFB-0F5E-41A6-88CD-58FAC1CD83A6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{4AA145C4-A40D-46E3-B56E-24F1B61A0324}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\dotnet.yml = .github\workflows\dotnet.yml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,5 +40,7 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{F5A2650C-4996-490A-A60B-89E3B95DFC65} = {6E2D59EB-648D-4968-8A63-8D8E3813EC86}
+		{6D2DEBFB-0F5E-41A6-88CD-58FAC1CD83A6} = {F1A57014-71CE-4032-A652-01B7E35E14DB}
+		{4AA145C4-A40D-46E3-B56E-24F1B61A0324} = {6D2DEBFB-0F5E-41A6-88CD-58FAC1CD83A6}
 	EndGlobalSection
 EndGlobal
