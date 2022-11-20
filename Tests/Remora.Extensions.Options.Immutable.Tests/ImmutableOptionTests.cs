@@ -345,7 +345,7 @@ public class ImmutableOptionTests
     private record TestValidator(string RequiredValue, bool RequiredFlag) : IValidateOptions<ExplicitOptions>
     {
         /// <inheritdoc/>
-        public ValidateOptionsResult Validate(string name, ExplicitOptions options)
+        public ValidateOptionsResult Validate(string? name, ExplicitOptions options)
         {
             if (options.Value != this.RequiredValue)
             {
