@@ -8,7 +8,7 @@
         </Description>
         <PackageReleaseNotes>
             Upgrade Remora.Sdk.
-            Add .NET 7 as a target.
+            Upgrade nuget packages.
         </PackageReleaseNotes>
     </PropertyGroup>
 
