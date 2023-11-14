@@ -22,4 +22,8 @@
             Remora.Extensions is a set of libraries that extend the C# ecosystem, in similar vein to Microsoft.Extenions.
         </BaseDescription>
     </PropertyGroup>
+
+    <PropertyGroup>
+        <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+    </PropertyGroup>
 </Project>

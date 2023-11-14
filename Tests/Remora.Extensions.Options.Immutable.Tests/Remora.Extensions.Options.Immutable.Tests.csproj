@@ -1,6 +1,6 @@
 <Project Sdk="Remora.Tests.Sdk/2.0.2">
     <ItemGroup>
-        <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="7.0.0" />
+        <PackageReference Include="Microsoft.Extensions.DependencyInjection" />
     </ItemGroup>
 
     <ItemGroup>
