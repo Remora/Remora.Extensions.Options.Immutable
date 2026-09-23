@@ -1,13 +1,13 @@
 <Project Sdk="Remora.Sdk">
     <PropertyGroup>
-        <VersionPrefix>2.0.0</VersionPrefix>
+        <VersionPrefix>3.0.0</VersionPrefix>
         <Description>
             $(BaseDescription)
 
             This package adds support for immutable option types for Microsoft's DI containers.
         </Description>
         <PackageReleaseNotes>
-            Upgrade dependencies.
+            Upgrade SDK and dependencies.
         </PackageReleaseNotes>
     </PropertyGroup>
 
